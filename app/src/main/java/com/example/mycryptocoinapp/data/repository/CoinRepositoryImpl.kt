@@ -43,7 +43,7 @@ class CoinRepositoryImpl(
                 val dbModelList = coinInfoDtoList.map { mapper.mapDtoToDbModel(it) }
                 coinInfoDao.insertPriceList(dbModelList)
             } catch (e: Exception) {
-                Log.d("CoinRepositoryImpl - ERROR", "No internet connection")
+                Log.d("CoinRepositoryImpl - ERROR", e.message.toString())
             }
             delay(10000)
         }
