@@ -33,7 +33,7 @@ class CoinInfoAdapter(private val context: Context) :
                 val lastUpdateTemplate =
                     context.resources.getString(R.string.last_update_template)
                 tvSymbols.text = String.format(symbolsTemplate, fromSymbol, toSymbol)
-                tvPrice.text = String.format("%.4f", price?.toFloat())
+                tvPrice.text = price
                 tvLastUpdate.text = String.format(lastUpdateTemplate, lastUpdate)
                 Picasso.get().load(imageUrl).into(ivLogoCoin)
                 root.setOnClickListener {
